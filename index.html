@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>System Alert</title>
+<style>
+body {
+  background-color: black;
+  color: red;
+  font-family: monospace;
+  text-align: center;
+  margin-top: 100px;
+}
+</style>
+</head>
+<body>
+
+<h1>⚠️ WARNING ⚠️</h1>
+<p>Your device has been hacked!</p>
+<p>All data is being transferred...</p>
+<p id="countdown"></p>
+
+<script>
+let i = 5;
+setInterval(() => {
+  document.getElementById("countdown").innerText = "Deleting data in " + i + " seconds...";
+  i--;
+}, 1000);
+</script>
+
+</body>
+</html>
