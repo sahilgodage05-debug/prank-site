@@ -1,29 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>System Alert</title>
+<title>System Breach</title>
 <style>
 body {
   background-color: black;
-  color: red;
+  color: lime;
   font-family: monospace;
+  padding: 20px;
+}
+h1 {
+  color: red;
   text-align: center;
-  margin-top: 100px;
+}
+.container {
+  margin-top: 30px;
+}
+.item {
+  margin: 10px 0;
+  font-size: 18px;
+}
+#ghost {
+  display: none;
+  text-align: center;
+  margin-top: 30px;
+}
+#ghost img {
+  width: 250px;
+  border-radius: 10px;
+}
+#name {
+  text-align: center;
+  margin-top: 40px;
+  color: white;
+  font-size: 20px;
 }
 </style>
 </head>
+
 <body>
 
-<h1>⚠️ WARNING ⚠️</h1>
-<p>Your device has been hacked by sahil!</p>
-<p>All data is being transferred...</p>
-<p id="countdown"></p>
+<h1>⚠ SYSTEM BREACH DETECTED ⚠</h1>
+
+<div class="container">
+  <div class="item"><input type="checkbox" id="c1"> Device Data Accessed</div>
+  <div class="item"><input type="checkbox" id="c2"> Personal Files Synced</div>
+  <div class="item"><input type="checkbox" id="c3"> Media Files Extracted</div>
+  <div class="item"><input type="checkbox" id="c4"> Contacts Data Retrieved</div>
+  <div class="item"><input type="checkbox" id="c5"> Private Messages Mirrored</div>
+  <div class="item"><input type="checkbox" id="c6"> Secure Backup Created</div>
+</div>
+
+<div id="ghost">
+  <!-- COD Ghost style image -->
+  <img src="https://wallpapercave.com/wp/wp9420993.jpg">
+</div>
+
+<div id="name">Tracked by: SAHIL 👁</div>
 
 <script>
-let i = 5;
-setInterval(() => {
-  document.getElementById("countdown").innerText = "Deleting data in " + i + " seconds...";
-  i--;
+let i = 1;
+
+let interval = setInterval(() => {
+  let checkbox = document.getElementById("c" + i);
+  if (checkbox) {
+    checkbox.checked = true;
+    i++;
+  } else {
+    clearInterval(interval);
+    document.getElementById("ghost").style.display = "block";
+  }
 }, 1000);
 </script>
 
